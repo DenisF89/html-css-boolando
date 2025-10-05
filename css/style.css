@@ -15,7 +15,8 @@ a{
 }
 .boxed{
     margin: 0 auto;
-    width: 70%;
+    width: 65%;
+    min-width: 600px;
 }
 .flexbox{
     display:flex;
@@ -23,29 +24,45 @@ a{
 
 /* ----------------------------HEADER------------------------- */
 header{
-    background-color: rgb(255, 123, 0);
-    display: fixed;
+    position: fixed;            /* l'header rimane bloccato in alto  */
+    top:0;
+    left:0;
+    z-index:2;                  /* lo porto in alto così nulla si sovrappone */ 
+    width: 100%;
     color:white;
-    padding:20px;
-    box-shadow: 0 0.1rem 0.5rem rgb(99, 99, 99); 
+    padding: 2rem 0;
+    background-color: rgb(255, 123, 0);
+    box-shadow: 0 0.1rem 0.6rem rgb(99, 99, 99);   /* aggiungo un'ombra */
 }
 
-#nav > div{
-    flex:1;
-    align-items: center;
+/* posiziono gli elementi dell'header con position absolute rispetto al NAV relative */
+#nav{
+    position:relative;          
+}
+#reparti{
+    position:absolute;
+    top:50%;                      /* sposto l'elemento della metà dell'altezza del contenitore */
+    left:0;
+    transform: translateY(-50%);  /* centro l'elemento spostando in alto di metà altezza dell'elemento */
 }
 #reparti ul{
     gap: 0.8rem;
     font-weight: 800;
 }
 #logo{
-    justify-content: center;
+    position:absolute;
+    top:50%;                            /* sposto l'elemento della metà dell'altezza del contenitore */
+    left:50%;                           /* sposto l'elemento della metà della larghezza del contenitore */
+    transform: translate(-50%,-50%);    /* centro l'elemento spostando in alto e a sinistra di metà altezza dell'elemento */
 }
 #logo img{
     width:10rem;
 }
 #icons{
-    justify-content: flex-end;
+    position:absolute;
+    top:50%;
+    right:0;
+    transform: translateY(-50%);
 }
 #icons ul{
     gap:0.5rem;
@@ -55,56 +72,52 @@ header{
 
 #shop{
     flex-wrap: wrap;
-    margin: 3rem auto;
+    margin: 7rem auto 3rem;
     gap: 2rem;
 }
 .card{
-    flex:30%;
+    flex:1 1 30%;
 }
 .photo{
-    position:relative;
+    position:relative;         /*  le immagini si posizionano a partire dal box contenitore .photo*/
 }
 .photo_A img{
     width: 100%;
 }
 .photo_B{
-    position: absolute;
+    position: absolute;         /* posiziono la seconda foto in modo che si sovrapponga alla prima */
     top:0;
-    z-index: -1;
+    z-index: -1;                /* mando la foto sotto la prima */         
 }
 .photo_B img{
     width: 100%;
 }
 .photo:hover .photo_B{
-    z-index: 0; /* dichiarandolo dopo passa avanti photo_A */
+    z-index: 0;                 /* dichiarandolo dopo passa avanti photo_A */
 }
+
 /* ALTERNATIVA - FOTO_A DIVENTA TRASPARENTE
 .photo:hover .photo_A{
     opacity: 0;
 } 
 */
-.desciption{
-    display: flex;
-    flex-direction: column;
-    gap: 0.1rem;
-    padding: 0.3rem 0;
-}
+
 .photo_like{
     background-color: rgb(255, 255, 255);
     font-size: 1.5rem;
     padding: 0.5rem;
-    position: absolute;
+    position: absolute;         /* posiziono il "like" in alto a destra */
     top: 3%;
     right: 0;
 }
-.photo_like i:hover{
+.photo_like i:hover{            /*  quando passo sul cuore diventa rosso */
     cursor: pointer;
-    color:red;
+    color:red;                
 }
 .photo_label{
-    position: absolute;
+    position: absolute;        /*  posiziono l'etichetta in basso a sinistra */
     bottom: 10%;
-    display: flex;
+    display: flex;             /* affianco etichette */
     gap:0.3rem;
     color: white;
     font-weight: 600;
@@ -116,6 +129,12 @@ header{
 .green{
     background-color:rgb(0, 172, 0);
     padding: 0.3rem 1rem;
+}
+.desciption{
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    padding: 0.3rem 0;
 }
 .red{
     color: red;
