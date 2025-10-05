@@ -48,14 +48,58 @@ header{
     gap:0.5rem;
 }
 
+#shop{
+    flex-wrap: wrap;
+    gap:1rem;
+    margin: 30px auto;
+    gap: 20px;
+}
+
+.card{
+    background-color: aqua;
+    flex:30%;
+}
+
+
+.photo{
+    background-color: blue;
+    height:400px;
+    position:relative;
+}
+.desciption{
+    display: flex;
+    flex-direction: column;
+}
+.photo_like{
+    height: 40px;
+    width: 40px;
+    background-color: yellow;
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
+.photo_label{
+    height: 30px;
+    width: 100px;
+    background-color: rgb(255, 0, 0);
+    position: absolute;
+    bottom: 30px;
+}
+
+
+
+
+
+
+
+
+
+
 footer{
     background-color: black;
     border-bottom: 1px solid white;
     padding:20px 0;
     color:white;
-    position: fixed;
-    bottom:0;
-    width: 100%;
 }
 #bottom{
     align-items: center;
