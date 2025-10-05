@@ -51,7 +51,7 @@ header{
 #shop{
     flex-wrap: wrap;
     gap:1rem;
-    margin: 30px auto;
+    margin: 50px auto;
     gap: 2rem;
 }
 
@@ -97,7 +97,12 @@ header{
      padding: 5px 10px;
 }
 
-
+.red{
+    color: red;
+}
+.strike{
+    text-decoration: line-through;
+}
 
 
 
