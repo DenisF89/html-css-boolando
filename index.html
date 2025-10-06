@@ -10,6 +10,7 @@
 </head>
 <body>
     <header>
+       <!--  HEADER POSITION FIXED - ELEMENTI POSITION ABSOLUTE -->
         <div id="nav" class="boxed">
             <div id="reparti" class="flexbox">
                 <ul class="flexbox">
@@ -33,7 +34,167 @@
 
     <main>
         <div id="shop" class="boxed flexbox">
+            
+           <!--  SEZIONE IN PIU: CONTROLLER - CARDS PER RIGA -->
+            <div id="control">
+                <input type="radio" name="number" id="N1">
+                <label for="N1">1</label>
+                <input type="radio" name="number" id="N2">
+                <label for="N2">2</label>
+                <input type="radio" name="number" id="N3" checked>
+                <label for="N3">3</label>
+                <input type="radio" name="number" id="N4">
+                <label for="N4">4</label>
+                <input type="radio" name="number" id="N5">
+                <label for="N5">5</label>
+                <input type="radio" name="number" id="N6">
+                <label for="N6">6</label>
+            </div>
+            <!-- FINE SEZIONE CONTROLLER -->
+
+            <!-- CARD 1 -->
             <div class="card">
+                <div class="photo">
+                    <div class="photo_A">
+                        <img src="./img/1.webp" alt="T-shirt unisex posa1">
+                    </div>
+                    <div class="photo_B">
+                        <img src="./img/1b.webp" alt="T-shirt unisex posa2">
+                    </div>
+                    <div class="photo_like">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <div class="photo_label">
+                        <span class="sale">-50%</span>
+                        <span class="green">Sostenibilità</span>
+                    </div>
+                </div>
+                <div class="desciption">
+                    <p>Levi's</p>
+                    <strong>RELAXED FIT TEE UNISEX</strong>
+                    <p><strong class="red">14,99 €</strong> 
+                    <span class="strike">29,99 €</span></p>
+                </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="card">
+                <div class="photo">
+                    <div class="photo_A">
+                        <img src="./img/2.webp" alt="Vestito guess posa1">
+                    </div>
+                    <div class="photo_B">
+                        <img src="./img/2b.webp" alt="Vestito guess posa2">
+                    </div>
+                     <div class="photo_like">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <div class="photo_label">
+                        <span class="sale">-30%</span>
+                    </div>
+                </div>
+                <div class="desciption">
+                    <p>Guess</p>
+                    <strong>ROSES TEE</strong>
+                    <p><strong class="red">20,99 €</strong> <span class="strike">29,99 €</span></p>
+                </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="card">
+                <div class="photo">
+                    <div class="photo_A">
+                         <img src="./img/3.webp" alt="Abito donna verde pastello">
+                    </div>
+                    <div class="photo_B">
+                        <img src="./img/3b.webp" alt="Abito donna grigio pastello">
+                    </div>
+                     <div class="photo_like">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <div class="photo_label">
+                        <span class="sale">-30%</span>
+                    </div>
+                </div>
+                <div class="desciption">
+                    <p>Zucchero</p>
+                    <strong>COLORI PASTELLO</strong>
+                    <p><strong class="red">129,99 €</strong> <span class="strike">184,99 €</span></p>
+                </div>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="card">
+                <div class="photo">
+                    <div class="photo_A">
+                         <img src="./img/4.webp" alt="T-shirt Levi's posa1">
+                    </div>
+                    <div class="photo_B">
+                        <img src="./img/4b.webp" alt="T-shirt Levi's posa2">
+                    </div>
+                     <div class="photo_like">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <div class="photo_label">
+                        <span class="sale">-50%</span>
+                        <span class="green">Sostenibilità</span>
+                    </div>
+                </div>
+                <div class="desciption">
+                    <p>Levi's</p>
+                    <strong>TEE UNISEX</strong>
+                    <p><strong class="red">14,99 €</strong> <span class="strike">29,99 €</span></p>
+                </div>
+            </div>
+
+            <!-- CARD 5 -->
+            <div class="card">
+                <div class="photo">
+                    <div class="photo_A">
+                         <img src="./img/5.webp" alt="Vestito donna Posa1">
+                    </div>
+                    <div class="photo_B">
+                        <img src="./img/5b.webp" alt="Vestito donna Posa2">
+                    </div>
+                     <div class="photo_like">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <div class="photo_label">
+                        <!-- VUOTO -->
+                    </div>
+                </div>
+                <div class="desciption">
+                    <p>Maya Deluxe</p>
+                    <strong>STRIPE BODICE</strong>
+                    <p><strong class="red">99,99 €</strong></p>
+                </div>
+            </div>
+
+            <!-- CARD 6 -->
+            <div class="card">
+                <div class="photo">
+                    <div class="photo_A">
+                         <img src="./img/6.webp" alt="Maglione nero posa1">
+                    </div>
+                    <div class="photo_B">
+                        <img src="./img/6b.webp" alt="Maglione nero posa2">
+                    </div>
+                     <div class="photo_like">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <div class="photo_label">
+                        <span class="green">Sostenibilità</span>
+                    </div>
+                </div>
+                <div class="desciption">
+                    <p>Esprit</p>
+                    <strong>MAGLIONE - BLACK</strong>
+                    <p><strong class="red">29,99 €</strong></p>
+                </div>
+            </div>
+
+            <!-- ALTRE CARD
+              <div class="card">
                 <div class="photo">
                     <div class="photo_A">
                         <img src="./img/1.webp" alt="T-shirt unisex posa1">
@@ -97,75 +258,13 @@
                     <strong>COLORI PASTELLO</strong>
                     <p><strong class="red">129,99 €</strong> <span class="strike">184,99 €</span></p>
                 </div>
-            </div>
-            <div class="card">
-                <div class="photo">
-                    <div class="photo_A">
-                         <img src="./img/4.webp" alt="T-shirt Levi's posa1">
-                    </div>
-                    <div class="photo_B">
-                        <img src="./img/4b.webp" alt="T-shirt Levi's posa2">
-                    </div>
-                     <div class="photo_like">
-                        <i class="fa-solid fa-heart"></i>
-                    </div>
-                    <div class="photo_label">
-                        <span class="sale">-50%</span>
-                        <span class="green">Sostenibilità</span>
-                    </div>
-                </div>
-                <div class="desciption">
-                    <p>Levi's</p>
-                    <strong>TEE UNISEX</strong>
-                    <p><strong class="red">14,99 €</strong> <span class="strike">29,99 €</span></p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="photo">
-                    <div class="photo_A">
-                         <img src="./img/5.webp" alt="Vestito donna Posa1">
-                    </div>
-                    <div class="photo_B">
-                        <img src="./img/5b.webp" alt="Vestito donna Posa2">
-                    </div>
-                     <div class="photo_like">
-                        <i class="fa-solid fa-heart"></i>
-                    </div>
-                    <div class="photo_label">
-                        
-                    </div>
-                </div>
-                <div class="desciption">
-                    <p>Maya Deluxe</p>
-                    <strong>STRIPE BODICE</strong>
-                    <p><strong class="red">99,99 €</strong></p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="photo">
-                    <div class="photo_A">
-                         <img src="./img/6.webp" alt="Maglione nero posa1">
-                    </div>
-                    <div class="photo_B">
-                        <img src="./img/6b.webp" alt="Maglione nero posa2">
-                    </div>
-                     <div class="photo_like">
-                        <i class="fa-solid fa-heart"></i>
-                    </div>
-                    <div class="photo_label">
-                        <span class="green">Sostenibilità</span>
-                    </div>
-                </div>
-                <div class="desciption">
-                    <p>Esprit</p>
-                    <strong>MAGLIONE - BLACK</strong>
-                    <p><strong class="red">29,99 €</strong></p>
-                </div>
-            </div>
+            </div> -->
+        
         </div>
     </main>
 
     <footer>
+        <!-- FOOTER DISPLAY FLEXBOX -->
         <div id="bottom" class="boxed flexbox">
             <div>
                 <strong>Booleando s.r.l</strong>

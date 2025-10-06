@@ -1,3 +1,16 @@
+:root{
+    /* posiziona le etichette */
+    --pos_label:10%;
+
+    /* numero card per ogni riga
+    elimina "N3 checked" nell'html per farlo funzionare da qui */
+
+    --n_card_f_row:3; 
+
+    /* card gap da sottrarre al calcolo riga */
+    --gap: 4%;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -15,7 +28,7 @@ a{
 }
 .boxed{
     margin: 0 auto;
-    width: 65%;
+    width: 70%;
     min-width: 600px;
 }
 .flexbox{
@@ -71,12 +84,14 @@ header{
 /* ----------------------------MAIN------------------------- */
 
 #shop{
-    flex-wrap: wrap;
+    flex-wrap:wrap;
     margin: 7rem auto 3rem;
-    gap: 2rem;
+    gap: var(--gap);
 }
-.card{
-    flex:1 1 30%;
+.card{          /*calcolo grandezza percentuale a seconda di quante card voglio su una riga*/
+    --flex: calc((100%/var(--n_card_f_row)) - var(--gap)); 
+    flex:1 1 var(--flex);
+    margin: 1rem 0;
 }
 .photo{
     position:relative;         /*  le immagini si posizionano a partire dal box contenitore .photo*/
@@ -88,6 +103,7 @@ header{
     position: absolute;         /* posiziono la seconda foto in modo che si sovrapponga alla prima */
     top:0;
     z-index: -1;                /* mando la foto sotto la prima */         
+    inset: 0;                   /* fa si che la foto copra l'intera superficie */
 }
 .photo_B img{
     width: 100%;
@@ -107,7 +123,7 @@ header{
     font-size: 1.5rem;
     padding: 0.5rem;
     position: absolute;         /* posiziono il "like" in alto a destra */
-    top: 3%;
+    top: calc(var(--pos_label)/2);
     right: 0;
 }
 .photo_like i:hover{            /*  quando passo sul cuore diventa rosso */
@@ -116,8 +132,9 @@ header{
 }
 .photo_label{
     position: absolute;        /*  posiziono l'etichetta in basso a sinistra */
-    bottom: 10%;
+    bottom: var(--pos_label);
     display: flex;             /* affianco etichette */
+    flex-wrap: wrap;
     gap:0.3rem;
     color: white;
     font-weight: 600;
@@ -164,3 +181,51 @@ footer{
     margin-top:0.5rem;
     font-size: 0.8rem;
 }
+
+/* ----------------------------CONTROLLER ELEMENTI PER RIGA------------------------- */
+
+#control{
+    position: fixed;           /*  controller fisso  */
+    top:50%;
+    left:0;
+    transform: translateY(-50%);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+#control label {                /*stile pulsanti*/
+    background: #ccc;
+    border: 2px solid #9b9b9b;
+    border-top-right-radius: 1rem;
+    padding: 0.6rem 1rem 1rem;
+    cursor: pointer;
+    margin-top:-1rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: white;
+}
+#control label:last-child {
+    border-bottom-right-radius: 1rem;
+}
+
+/* Rendo gli input radio invisibili, selezionabili dal label: for -> id */
+input[type="radio"] {       
+      display: none;
+}
+/* Accendo il label attivo tramite il relativo radio che lo precede direttamente ( selettore + )*/
+#control input[type="radio"]:checked + label {
+    border-color: rgb(206, 93, 0);
+    background-color: rgb(255, 123, 0);
+}
+
+/* A seconda del bottone attivo dentro al controller cambia la variabile flex delle cards: 
+":has" pseudo-selettore per i browser nuovi seleziona il padre
+"~" seleziona i fratelli successivi dello stesso padre
+"--" dichiara variabile*/
+#control:has(#N1:checked) ~ .card { --n_card_f_row: 1; }
+#control:has(#N2:checked) ~ .card { --n_card_f_row: 2; }
+#control:has(#N3:checked) ~ .card { --n_card_f_row: 3; }
+#control:has(#N4:checked) ~ .card { --n_card_f_row: 4; }
+#control:has(#N5:checked) ~ .card { --n_card_f_row: 5; }
+#control:has(#N6:checked) ~ .card { --n_card_f_row: 6; }
