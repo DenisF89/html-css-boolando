@@ -233,3 +233,9 @@ input[type="radio"] {
 #control:has(#N4:checked) ~ .card { --n_card_f_row: 4; }
 #control:has(#N5:checked) ~ .card { --n_card_f_row: 5; }
 #control:has(#N6:checked) ~ .card { --n_card_f_row: 6; }
+
+main:has(#N6:checked) ~ footer { 
+    position:absolute; 
+    bottom:0;
+    width: 100%;
+}
